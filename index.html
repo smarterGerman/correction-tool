@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adjustable Input Field</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="navigation">
+    <div id="wordCountRow">0 words</div>
+    <div id="copyContainer">
+        <button id="copyButton">Copy</button>
+        <div id="copiedPopup">Copied</div>
+    </div>
+</div>
+<div class="container">
+    <div class="line-numbers"></div>
+    <div class="input-container"> 
+        <div class="adjustable-input" id="txtMsg" contenteditable="true" oninput="updateWordCount(this)"></div>
+        <span id="spMsg"></span>
+    </div>
+    <div >
+        <!-- <h3>Differences to be highlighted:</h3> -->
+        <!-- <div id="highlightedTextDiv"></div>
+        <div id="explanation">Explanation:</div>
+        <div id="hints">Hint:</div> -->
+        <div id="output">
+            <div id="smarty-img" class="hide">
+                <img src="images/smarty_thinking.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <div class="word-count" id="wordCount">0 words</div>
+    <button class="copy-btn" onclick="copyToClipboard()">Copy</button> -->
+</div>
+<div id="check-button" onclick="callGPT(); disableHint(); disableExplanation();">Check</div>
+<div id="explanation-hints" class="hide">
+    <button id="explainButton" onclick="enableExplanation()">Explain</button>
+    <button id="hintButton" onclick="enableHint()">Show Hint</button>
+</div>
+</body>
+<script src="highlighting.js"></script>
+<script src="chatgpt.js"></script>
+<script src="script.js"></script>
+</html>

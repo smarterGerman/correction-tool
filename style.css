@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF0F1;
+    width: max-content;
+}
+
+.line-numbers {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    color: gray;
+    pointer-events: none; /* Prevent interaction with line numbers */
+    user-select: none; /* Prevent text selection on line numbers */
+    line-height: 16px; /* Set line height equal to font size */
+}
+
+.adjustable-input {
+    /* display: inline-block; */
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 300px;
+    min-height: 120px; /* 10 lines * (font-size + line-height) */
+    font-size: 16px;
+    line-height: 16px; /* Set line height equal to font size */
+    margin-left: 25px; /* Leave space for line numbers */
+    outline: none;
+    border: none;
+    background-color: #FFFAFA;
+    white-space: pre-wrap; /* Allow line wrapping */
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+#navigation {
+    display: flex;
+    flex-direction: row;
+    background-color: #FF7486;
+    width: 335px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 12px;
+    color: white;
+    text-align: right;
+    justify-content: right;
+    align-items: center;
+    padding: 5px 5px 5px 0px;
+    box-sizing: border-box;
+}
+
+#copyButton {
+    border: none;
+    background: none;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#copiedPopup {
+    display: none;
+    position: absolute;
+    background-color: #545454;
+    font-size: 10px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#check-button {
+    width: 335px;
+    background-color: #FF7486;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    margin-top: 15px;
+    padding: 5px 0px;
+    text-align: center;
+}
+#explanation-hints {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 335px;
+}
+#explainButton, #hintButton {
+    width: 150px;
+    background-color: #FF7486;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    margin-top: 15px;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+#explainButton:hover, 
+#hintButton:hover {
+    background-color: #FF9AA6;
+    cursor: pointer;  
+}
+
+#check-button:hover {
+    background-color: #FF9AA6;
+    cursor: pointer;
+}
+
+/* CHAT-GPT OUTPUT */
+#output {
+    width: 325px;
+    background-color: #FF9AA6;
+    min-height: 50px;
+    /* margin-top: 15px; */
+    padding: 5px;
+    font-size: 12px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: justify;
+}
+#smarty-img img{
+    position: absolute;
+    width: 35px;
+    bottom: 0px;
+    right: 0px;
+}
+
+span:hover {
+    background-color: pink !important;
+}
+
+.hide {
+    display: none !important;
+}
