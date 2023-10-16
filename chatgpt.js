@@ -1,5 +1,12 @@
+exports.handler = async function (event, context) {
+  const value = process.env.OPENAI_API_KEY;
 
-const OPENAI_API_KEY = Netlify.env.get("OPENAI_API_KEY");
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: `Value of OPENAI_API_KEY is ${value}.` }),
+  };  
+};
+
 
 function Send1(command) {
   // var sQuestion = txtMsg.value;
