@@ -1,4 +1,3 @@
-import OPENAI_API_KEY from "./apikey.js";
 // function highlightDifferences(text2, text1) {
 //     const words1 = text1.trim().split(/\s+/);
 //     const words2 = text2.trim().split(/\s+/);
