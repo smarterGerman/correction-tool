@@ -1,6 +1,6 @@
 exports.handler = async function (event, context) {
   const value = process.env.OPENAI_API_KEY;
-
+  console.log(value);
   return {
     statusCode: 200,
     body: JSON.stringify({ message: `Value of OPENAI_API_KEY is ${value}.` }),
