@@ -1,39 +1,34 @@
 const http = require('http');
 
-const options = {
-  hostname: 'jsonplaceholder.typicode.com',
-  path: '/posts',
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
+const apiKeyURL = 'api-key-url';
 
-const getPosts = () => {
-  let data = '';
+// Function to fetch the API key from the specified URL
+function fetchAPIKey() {
+  return new Promise((resolve, reject) => {
+    http.get(apiKeyURL, (res) => {
+      let data = '';
 
-  const request = http.request(options, (response) => {
-    // Set the encoding, so we don't get log to the console a bunch of gibberish binary data
-    response.setEncoding('utf8');
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
 
-    // As data starts streaming in, add each chunk to "data"
-    response.on('data', (chunk) => {
-      data += chunk;
-    });
-
-    // The whole response has been received. Print out the result.
-    response.on('end', () => {
-      console.log(data);
+      res.on('end', () => {
+        const apiKey = data.trim();
+        resolve(apiKey);
+      });
+    }).on('error', (err) => {
+      reject(err);
     });
   });
+}
 
-  // Log errors if any occur
-  request.on('error', (error) => {
-    console.error(error);
+// Usage of the fetchAPIKey function
+fetchAPIKey()
+  .then((apiKey) => {
+    // Now you have the API key, and you can use it in your code
+    console.log('Fetched API key:', apiKey);
+    // CALL FUNCITON HERE
+  })
+  .catch((error) => {
+    console.error('Error fetching API key:', error);
   });
-
-  // End the request
-  request.end();
-};
-
-getPosts();
