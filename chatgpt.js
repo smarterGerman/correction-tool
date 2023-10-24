@@ -1,12 +1,14 @@
-exports.handler = async function (event, context) {
-  const value = process.env.OPENAI_API_KEY;
-  console.log(value);
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: `Value of OPENAI_API_KEY is ${value}.` }),
-  };  
-};
 
+
+// exports.handler = async function (event, context) {
+//   const value = process.env.OPENAI_API_KEY;
+//   console.log(value);
+//   return {
+//     statusCode: 200,
+//     body: JSON.stringify({ message: `Value of OPENAI_API_KEY is ${value}.` }),
+//   };  
+// };
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 function Send1(command) {
   // var sQuestion = txtMsg.value;
